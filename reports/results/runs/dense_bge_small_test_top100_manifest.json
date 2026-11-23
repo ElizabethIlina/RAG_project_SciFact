@@ -1,0 +1,15 @@
+{
+  "collection_name": "scifact-documents-bge-small-en-v1-5",
+  "created_at_utc": "2026-11-21T16:28:31.095294+00:00",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "max_length": 512,
+  "mean_embedding_latency_ms": 8.62,
+  "mean_search_latency_ms": 10.277,
+  "mean_total_latency_ms": 18.898,
+  "queries": 300,
+  "query_instruction": "Represent this sentence for searching relevant passages:",
+  "ranking_rows": 30000,
+  "retrieval_method": "dense",
+  "split": "test",
+  "top_k": 100
+}

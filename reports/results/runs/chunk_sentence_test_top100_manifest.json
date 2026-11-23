@@ -1,0 +1,18 @@
+{
+  "aggregation": "max_chunk_score",
+  "candidate_multiplier": 5,
+  "chunk_size": 256,
+  "collection_name": "scifact-chunks-bge-small-en-v1-5-sentence-s256",
+  "created_at_utc": "2026-11-22T05:15:10.963750+00:00",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "evidence_rows": 150000,
+  "mean_candidate_chunks": 500.0,
+  "mean_embedding_latency_ms": 8.169,
+  "mean_search_latency_ms": 23.334,
+  "mean_total_latency_ms": 31.503,
+  "queries": 300,
+  "ranking_rows": 30000,
+  "split": "test",
+  "strategy": "sentence",
+  "top_k": 100
+}

@@ -1,0 +1,43 @@
+{
+  "error_counts": {
+    "format_noncompliance": 2,
+    "generation_overclaim": 1,
+    "none": 4,
+    "retrieval_qrels_miss": 1
+  },
+  "langfuse_hobby": {
+    "data_access_days": 30,
+    "estimated_allowance_percent": 0.192,
+    "estimated_import_units": 96,
+    "monthly_included_units": 50000
+  },
+  "manual_mean_scores": {
+    "citation_quality_0_2": 1.5,
+    "completeness_0_2": 2.0,
+    "correctness_0_2": 2.0,
+    "groundedness_0_2": 1.875
+  },
+  "rag": {
+    "answers": 8,
+    "answers_with_citations": 8,
+    "answers_with_invalid_citations": 0,
+    "baseline_answers": 0,
+    "mean_generation_latency_ms": 1240.454,
+    "mean_total_tokens": 1326.25,
+    "rag_answers": 8,
+    "rag_contexts_with_relevant_document": 7,
+    "total_completion_tokens": 1008,
+    "total_prompt_tokens": 9602
+  },
+  "retrieval": {
+    "best_chunk_ndcg_at_10": {
+      "method": "chunk_recursive",
+      "value": 0.724871
+    },
+    "best_ndcg_at_10": {
+      "method": "hybrid_document",
+      "value": 0.726753
+    },
+    "methods": 6
+  }
+}

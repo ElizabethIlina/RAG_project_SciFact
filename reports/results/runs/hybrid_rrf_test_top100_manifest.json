@@ -1,0 +1,8 @@
+{
+  "created_at_utc": "2026-11-21T16:45:53.252215+00:00",
+  "queries": 300,
+  "ranking_rows": 30000,
+  "retrieval_method": "hybrid_rrf",
+  "rrf_k": 60,
+  "top_k": 100
+}

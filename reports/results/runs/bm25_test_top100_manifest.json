@@ -1,0 +1,13 @@
+{
+  "analyzer": "english",
+  "created_at_utc": "2026-11-21T10:03:02.816329+00:00",
+  "elasticsearch_version": "9.5.6",
+  "index_name": "scifact-documents-v1",
+  "indexed_documents": 5183,
+  "mean_query_latency_ms": 17.827,
+  "queries": 300,
+  "ranking_rows": 29966,
+  "retrieval_method": "bm25",
+  "split": "test",
+  "top_k": 100
+}

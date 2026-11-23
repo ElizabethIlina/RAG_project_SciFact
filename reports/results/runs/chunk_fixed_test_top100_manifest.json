@@ -1,0 +1,18 @@
+{
+  "aggregation": "max_chunk_score",
+  "candidate_multiplier": 5,
+  "chunk_size": 256,
+  "collection_name": "scifact-chunks-bge-small-en-v1-5-fixed-s256",
+  "created_at_utc": "2026-11-22T05:12:57.783661+00:00",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "evidence_rows": 150000,
+  "mean_candidate_chunks": 500.0,
+  "mean_embedding_latency_ms": 8.031,
+  "mean_search_latency_ms": 25.074,
+  "mean_total_latency_ms": 33.105,
+  "queries": 300,
+  "ranking_rows": 30000,
+  "split": "test",
+  "strategy": "fixed",
+  "top_k": 100
+}

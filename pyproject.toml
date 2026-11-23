@@ -1,0 +1,67 @@
+# Система сборки: Hatchling превращает код из src/rag_playground
+# в устанавливаемый Python-пакет.
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+# Метаданны и рабочие зависимости. Верхние границы версий не дают
+# незаметно перейти на будущий major-релиз с несовместимым API.
+[project]
+name = "rag-playground"
+version = "0.1.0"
+description = "Reproducible SciFact retrieval and RAG experiments with GigaChat"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  # Загрузка корпуса, запросов и qrels SciFact с Hugging Face.
+  "datasets>=5.2,<6",
+  # Клиенты двух поисковых движков: BM25 и dense retrieval.
+  "elasticsearch>=9.2,<10",
+  "qdrant-client>=1.20,<2",
+  # FastEmbed запускает локальную BGE Small через ONNX без PyTorch и API.
+  "fastembed>=0.7,<0.9",
+  # GigaChat нужен для embeddings и генерации; Langfuse — для трассировки.
+  "gigachat>=0.2.4,<0.3",
+  # SDK 4.7+ отправляет traces в актуальный Langfuse Cloud через OpenTelemetry.
+  "langfuse>=4.7,<5",
+]
+
+# Инструменты разработки не нужны при обычном запуске, поэтому вынесены
+# в отдельную группу dev.
+[project.optional-dependencies]
+dev = [
+  # JupyterLab нужен для запуска демонстрационных ноутбуков из этой же виртуальной среды.
+  "jupyterlab>=4.5,<5",
+  # Matplotlib строит итоговые retrieval/RAG графики в шестом ноутбуке.
+  "matplotlib>=3.10,<4",
+  "pytest>=9.0,<10",
+  "ruff>=0.14,<0.15",
+]
+
+# После установки пакета эта запись создаёт команду rag-playground.
+[project.scripts]
+rag-playground = "rag_playground.cli:main"
+
+# Проект использует src-layout: это не даёт тестам случайно импортировать
+# неустановленный пакет прямо из текущей папки.
+[tool.hatch.build.targets.wheel]
+packages = ["src/rag_playground"]
+
+# Pytest ищет тесты только в tests/ и печатает краткий отчёт.
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+markers = [
+  "integration: тест требует запущенный внешний сервис",
+]
+
+# Общие настройки статической проверки Ruff.
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+# E/F — базовые ошибки, I — импорты, UP — современный Python,
+# B — типичные ошибки и опасные конструкции, которые ищет flake8-bugbear.
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
